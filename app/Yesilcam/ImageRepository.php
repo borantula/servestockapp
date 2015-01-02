@@ -11,7 +11,7 @@ namespace Yesilcam;
 use \Eloquent;
 use \Config;
 
-class ImageRepository extends Eloquent
+class ImageRepository extends ImageBase
 {
 
     protected $table = 'images';
@@ -19,6 +19,7 @@ class ImageRepository extends Eloquent
     public $timestamps = true;
 
 
+    public $directoryKey = 'yesilcam.image_dir';
 
     public function sizedImages()
     {
@@ -41,11 +42,10 @@ class ImageRepository extends Eloquent
         ];
     }
 
+
     public function fullPath()
     {
-        //TODO: might be a wrong way
-        $dir = public_path( Config::get('yesilcam.image_dir') );
-        return $dir.DIRECTORY_SEPARATOR.$this->path;
+        return public_path( $this->relativePath() );
     }
 
 } 

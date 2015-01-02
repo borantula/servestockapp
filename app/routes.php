@@ -48,6 +48,7 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
         return View::make('hello');
 
     } else {
+
         $factory = new Yesilcam\ImageFactory($width,$height);
 
         //we have a result now, as an image provider
@@ -67,8 +68,17 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
 //            Event::fire('image.serving',$imageServer);
             return $imageServer->serve();
         }
-
+        return View::make('hello');
     }
+
+/*
+ * TODO NOTES:
+ * interface yada abstract class image yapıp iki tabloyu aynı formata getirip
+ * eğer orjinal imajın orantılı hali varsa o orantılı halden kesme yapılabilir
+ * Bunun dışında otomatik olarak büyük imajın çeşitli boyutlarda orantılı hali otomatik olarak kesilir
+ * Böylece memoryden kazanır
+ */
+
 
 });
 
@@ -82,17 +92,18 @@ Route::get('scan', function()
 
     $scanner->getValidFiles();
 
+    dump($scanner->files);
 
     foreach($scanner->files as $key => $file) {
 
 
-        var_dump( $scanner->fullPath($file) );
+        dump( $scanner->fullPath($file) );
 
         $imagePath = $scanner->fullPath($file);
 
-        $imageObj = new Yesilcam\ImageProcessor($imagePath);
+        $image = Image::make($imagePath);
 
-        $image = $imageObj->image();
+
 
         //register
         \Yesilcam\ImageScanner::registerImage( $file,$image->width(),$image->height() );

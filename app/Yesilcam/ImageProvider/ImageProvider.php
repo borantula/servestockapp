@@ -31,7 +31,7 @@ abstract class ImageProvider
      * ratio of width/height multipled by 100
      * @var interger
      */
-    protected $ratio;
+    public $ratio;
 
     /**
      * @var \ImageRepository|bool

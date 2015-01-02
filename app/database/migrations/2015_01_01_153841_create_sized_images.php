@@ -18,6 +18,7 @@ class CreateSizedImages extends Migration
             $table->integer('image_id');
             $table->integer('width');
             $table->integer('height');
+            $table->integer('ratio');
             $table->text('path');
             $table->boolean('file_exists')->default(0);
             $table->timestamps();

@@ -42,9 +42,13 @@ class SizedImageFactory {
 
         //if not, process and record a new image
         if( !$sizedImage ) {
+
+            \Debugbar::info('New image is preparing');
+
             $sized = new SizedImageRepository();
             $sized->width = $this->width;
             $sized->height = $this->height;
+            $sized->ratio = $this->provider->ratio;
             $sized->image_id = $this->image->id;
             $sized->save();
 
