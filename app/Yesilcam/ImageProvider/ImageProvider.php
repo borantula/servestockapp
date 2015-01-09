@@ -2,6 +2,7 @@
 
 namespace Yesilcam\ImageProvider;
 
+use Yesilcam\ImageBase;
 use Yesilcam\ImageRepository;
 use \DB;
 use \Config;

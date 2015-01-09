@@ -9,10 +9,11 @@ class ImageFactory {
      * @var array
      */
     private $providers = [
-        'Yesilcam\ImageProvider\ExactRatioImageProvider',
-        'Yesilcam\ImageProvider\ExactSizeImageProvider',
-        'Yesilcam\ImageProvider\SameSideOfRatioImageProvider',
-        'Yesilcam\ImageProvider\OppositeSideOfRatioImageProvider',
+//        'Yesilcam\ImageProvider\ExactRatioImageProvider',
+//        'Yesilcam\ImageProvider\ExactSizeImageProvider',
+//        'Yesilcam\ImageProvider\SameSideOfRatioImageProvider',
+//        'Yesilcam\ImageProvider\OppositeSideOfRatioImageProvider',
+        'Yesilcam\ImageProvider\RandomImageProvider',
     ];
 
     /**

@@ -18,7 +18,7 @@ class ImageProcessor extends Image {
 
     public $image;
 
-    public $quality = 90;
+    public $quality = 75;
 
     public function __construct(ImageProvider $provider,SizedImageRepository $sizedImage)
     {

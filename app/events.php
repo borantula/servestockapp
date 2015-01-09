@@ -1,15 +1,10 @@
 <?php
 
-Event::listen('image.serving', function($imageServer)
+Event::listen('image.serving', function(\Yesilcam\ImageBase $sizedImage)
 {
 
-    $recorder = new Yesilcam\ImageRecorder($imageServer);
-
-    $savedRecorder = $recorder->save();
-
-//    dump($savedRecorder);
-
+    $names = $sizedImage->namer();
     $redis = Redis::connection();
-    $redis->set('imgtest',date('H:i:s'));
+    $redis->incr($names['serve_count']);
 
 });

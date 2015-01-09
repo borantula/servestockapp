@@ -20,20 +20,10 @@ Route::get('/{width?}/{height?}', function($width = null,$height = null)
     if( is_null($width) ) {
 
 
-        return View::make('hello');
+        return View::make('test-view');
 
     } else {
-        if(is_null($height)) {
-            $height = $width;
-        }
 
-        //TODO:get to a controller
-        $provider = new Yesilcam\ImageProvider();
-
-        $result = $provider->search($width,$height);
-
-//        var_dump($result);
-        return $provider->serve($result);
     }
 
 });
@@ -48,7 +38,14 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
         return View::make('hello');
 
     } else {
-
+        /*
+        $get = Input::get('str');
+        if( !isset($get) ) {
+            $random = str_random(16);
+            return Redirect::to("test/{$width}/{$height}?str={$random}");
+        }
+        */
+        Debugbar::startMeasure('getting','Time for getting an image');
         $factory = new Yesilcam\ImageFactory($width,$height);
 
         //we have a result now, as an image provider
@@ -58,17 +55,19 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
         $sizedImageFactory = new Yesilcam\SizedImageFactory($provider);
 
         $sizedImage = $sizedImageFactory->find();
+        Debugbar::stopMeasure('render');
 
+//        dump($sizedImage->toArray());
 
-
+        Debugbar::startMeasure('serving','Time for serving an image');
         if( $sizedImage ) {
             $imageServer  = new Yesilcam\ImageServer($sizedImage);
 
-
-//            Event::fire('image.serving',$imageServer);
+            Event::fire('image.serving',$sizedImage);
             return $imageServer->serve();
         }
-        return View::make('hello');
+        Debugbar::stopMeasure('render');
+//        return View::make('hello');
     }
 
 /*
@@ -96,6 +95,11 @@ Route::get('scan', function()
 
     foreach($scanner->files as $key => $file) {
 
+        $img = Yesilcam\ImageRepository::where('path',$file)->first();
+
+        if($img) {
+            continue;
+        }
 
         dump( $scanner->fullPath($file) );
 
