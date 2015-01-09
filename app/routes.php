@@ -63,7 +63,7 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
         if( $sizedImage ) {
             $imageServer  = new Yesilcam\ImageServer($sizedImage);
 
-            Event::fire('image.serving',$sizedImage);
+//            Event::fire('image.serving',$sizedImage);
             return $imageServer->serve();
         }
         Debugbar::stopMeasure('render');
