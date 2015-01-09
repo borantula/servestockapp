@@ -32,6 +32,7 @@ class ExampleTest extends TestCase
      */
     public function testAllImages()
     {
+
         $sizes = array(
             [728, 90],
             [468, 60],
@@ -70,10 +71,19 @@ class ExampleTest extends TestCase
             [1136, 640],
         );
 
+        $sizes = [
+            [500, 500],
+            [160, 160],
+            [728, 90],
+            [468, 60],
+            [300, 600],
+        ];
+
         $images = Yesilcam\ImageRepository::all();
 
         foreach ($images as $key => $image) {
             foreach ($sizes as $key => $size) {
+
 
                 $provider = new Yesilcam\ImageProvider\SelectedImageProvider($size[0], $size[1], $image);
 
