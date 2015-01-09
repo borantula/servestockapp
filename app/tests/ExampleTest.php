@@ -33,6 +33,7 @@ class ExampleTest extends TestCase
     public function testAllImages()
     {
 
+        /*
         $sizes = array(
             [728, 90],
             [468, 60],
@@ -70,13 +71,12 @@ class ExampleTest extends TestCase
             [960, 640],
             [1136, 640],
         );
+        */
 
         $sizes = [
             [500, 500],
             [160, 160],
-            [728, 90],
-            [468, 60],
-            [300, 600],
+
         ];
 
         $images = Yesilcam\ImageRepository::all();
