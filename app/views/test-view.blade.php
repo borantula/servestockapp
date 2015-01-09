@@ -10,7 +10,7 @@
 <ul>
 	<li style="list-style: none;float:left;">
 		@for($i = 0;$i < 10;$i++)
-			<img src="http://stockserve.dev.com/test/125/125?t=<?=mt_rand(0,12300);?>" />
+			<img src="<?=url('/');?>/test/125/125?t=<?=mt_rand(0,12300);?>" />
 		@endfor
 	</li>
 </ul>
