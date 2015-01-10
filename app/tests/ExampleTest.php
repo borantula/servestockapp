@@ -74,7 +74,7 @@ class ExampleTest extends TestCase
         */
 
         $sizes = [
-            [500, 500],
+            [400, 400],
             [160, 160],
 
         ];
