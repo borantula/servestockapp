@@ -72,16 +72,13 @@ class ImageSizerCommand extends Command {
 					$height = round( ($width * 100 )/ ($image->ratio) );
 				}
 
-				$this->info("Resizing: {$image->ratio} to {$autoHeight} {$width}:{$height}");
-
-
 				$provider = new Yesilcam\ImageProvider\SelectedImageProvider($width, $height, $image);
 
 				$sizedImageFactory = new Yesilcam\SizedImageFactory($provider);
 
 				$sizedImage = $sizedImageFactory->find();
 
-				$this->info("Resized: {$image->id} to  {$width}:{$height}");
+				$this->info("Resized: no:{$key} id: {$image->id} to  {$width}:{$height}");
 
 		}
 
