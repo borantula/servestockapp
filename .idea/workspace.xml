@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageSizerCommand.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageSizerCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/commands/ImageSizerCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625" vertical-offset="915" max-vertical-offset="1740">
-              <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.41364297" vertical-offset="975" max-vertical-offset="1995">
+              <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageProcessor.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImageProcessor.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Yesilcam/ImageProcessor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8121019" vertical-offset="420" max-vertical-offset="1560">
-              <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state vertical-scroll-proportion="-17.5" vertical-offset="675" max-vertical-offset="1560">
+              <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -173,8 +173,8 @@
         <option value="$PROJECT_DIR$/app/Yesilcam/ImageFactory.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/test-view.blade.php" />
-        <option value="$PROJECT_DIR$/app/commands/ImageSizerCommand.php" />
         <option value="$PROJECT_DIR$/app/Yesilcam/ImageProcessor.php" />
+        <option value="$PROJECT_DIR$/app/commands/ImageSizerCommand.php" />
       </list>
     </option>
   </component>
@@ -469,7 +469,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5060729" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5060729" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -900,18 +900,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/commands/ImageSizerCommand.php">
+    <entry file="file://$PROJECT_DIR$/app/Yesilcam/ImageProcessor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625" vertical-offset="915" max-vertical-offset="1740">
-          <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
+        <state vertical-scroll-proportion="-17.5" vertical-offset="675" max-vertical-offset="1560">
+          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Yesilcam/ImageProcessor.php">
+    <entry file="file://$PROJECT_DIR$/app/commands/ImageSizerCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8121019" vertical-offset="420" max-vertical-offset="1560">
-          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.41364297" vertical-offset="975" max-vertical-offset="1995">
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding />
         </state>
       </provider>

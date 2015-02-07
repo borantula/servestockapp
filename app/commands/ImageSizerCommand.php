@@ -42,10 +42,22 @@ class ImageSizerCommand extends Command {
 		$width = $this->option('width');
 		$height = $this->option('height');
 
+
+
 		//if no height, than it will be proportional
 		$autoHeight = false;
 		if( !$height ) {
 			$autoHeight = true;
+		}
+
+
+		//width value is smaller than 1, treat it as a ratio
+		//height is ignored
+		$autoWidth = false;
+		if( $width < 1) {
+			$autoHeight = true;
+			$autoWidth = true;
+
 		}
 
 		if( $id ) {
@@ -70,6 +82,11 @@ class ImageSizerCommand extends Command {
 				if($autoHeight) {
 					$this->info("Resizing to ratio");
 					$height = round( ($width * 100 )/ ($image->ratio) );
+				}
+
+				if($autoWidth) {
+					$this->info("Resizing to ratio of width");
+					$width = round( ($width * $image->width * 100 )/ ($image->ratio) );
 				}
 
 				$provider = new Yesilcam\ImageProvider\SelectedImageProvider($width, $height, $image);
