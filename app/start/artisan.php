@@ -11,3 +11,5 @@
 |
 */
 
+Artisan::add(new ImageScannerCommand);
+Artisan::add(new ImageSizerCommand);

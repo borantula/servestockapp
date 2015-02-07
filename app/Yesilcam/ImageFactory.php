@@ -70,7 +70,7 @@ class ImageFactory {
 
         if( $result ) {
             $this->result = $provider;
-            \Log::info('worked:'.$this->currentProviderName);
+//            \Log::info('worked:'.$this->currentProviderName);
             return $provider;
         } else {
             return $this->run();

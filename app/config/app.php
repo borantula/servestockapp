@@ -196,6 +196,7 @@ return array(
 
         'Image' => 'Intervention\Image\Facades\Image',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Way\Generators\GeneratorsServiceProvider'
 
 	),
 

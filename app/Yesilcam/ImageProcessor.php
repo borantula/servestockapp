@@ -18,20 +18,44 @@ class ImageProcessor extends Image {
 
     public $image;
 
-    public $quality = 75;
+    public $quality = 100;
 
     public function __construct(ImageProvider $provider,SizedImageRepository $sizedImage)
     {
 
         $this->provider = $provider;
         $this->originalImage = $provider->image();
+        //check if sized image has smaller but same ratio version
 
         //check if sized image has smaller but same ratio version
         $sameRatioImage = $sizedImage->sameRatioBiggerSize($sizedImage)->first();
         if( !is_null($sameRatioImage) ) {
             $this->originalImage = $sameRatioImage;
-            $this->quality = 100;
+//            $this->quality = 100;
         }
+
+
+        if( !$sameRatioImage ) {
+
+            // if no same ratio and original image will be used,
+            // check for a small version of original image,
+            // it should be bigger than requested
+            $smallerOfOriginal = $this->originalImage->sizedImages()
+                                        ->whereRatio($this->originalImage->ratio)
+                                        ->where('width','>',$this->provider->width)
+                                        ->where('height','>',$this->provider->height)
+                                        ->orderBy('width','ASC')
+                                        ->first();
+
+            if($smallerOfOriginal) {
+                \Log::info("Smaller of original used {$smallerOfOriginal->width} for {$this->provider->width}:{$this->provider->height}");
+                $this->originalImage = $smallerOfOriginal;
+            }
+
+        }
+
+
+
 
         $this->sizedImage = $sizedImage;
 

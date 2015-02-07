@@ -9,6 +9,9 @@
         "kmd/logviewer": "dev-master",
 		"barryvdh/laravel-debugbar": "~1.8"
 	},
+	"require-dev": {
+	  "way/generators": "~2.0"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",

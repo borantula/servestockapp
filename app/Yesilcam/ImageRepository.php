@@ -48,4 +48,7 @@ class ImageRepository extends ImageBase
         return public_path( $this->relativePath() );
     }
 
+
+
+
 } 

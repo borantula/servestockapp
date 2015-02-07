@@ -64,10 +64,10 @@ Route::get('/test/{width?}/{height?}', function($width = null,$height = null)
             $imageServer  = new Yesilcam\ImageServer($sizedImage);
 
 //            Event::fire('image.serving',$sizedImage);
-            return $imageServer->serve();
+//            return $imageServer->serve();
         }
         Debugbar::stopMeasure('render');
-//        return View::make('hello');
+        return View::make('hello');
     }
 
 /*
