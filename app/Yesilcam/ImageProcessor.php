@@ -48,7 +48,7 @@ class ImageProcessor extends Image {
                                         ->first();
 
             if($smallerOfOriginal) {
-                \Log::info("Smaller of original used {$smallerOfOriginal->width} for {$this->provider->width}:{$this->provider->height}");
+//                \Log::info("Smaller of original used {$smallerOfOriginal->width} for {$this->provider->width}:{$this->provider->height}");
                 $this->originalImage = $smallerOfOriginal;
             }
 
