@@ -55,6 +55,7 @@ class ImageSizerCommand extends Command {
 		//height is ignored
 		$autoWidth = false;
 		if( $width < 1) {
+			$this->info('Auto width: {$width}');
 			$autoHeight = true;
 			$autoWidth = true;
 
@@ -88,6 +89,7 @@ class ImageSizerCommand extends Command {
 					$this->info("Resizing to ratio");
 					$height = round( ($width * 100 )/ ($image->ratio) );
 				}
+				$this->info("Resizing: no:{$key} id: {$image->id} to  {$width}:{$height}");
 
 				$provider = new Yesilcam\ImageProvider\SelectedImageProvider($width, $height, $image);
 
