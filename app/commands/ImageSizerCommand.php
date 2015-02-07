@@ -79,14 +79,14 @@ class ImageSizerCommand extends Command {
 
 		foreach ($images as $key => $image) {
 
-				if($autoHeight) {
-					$this->info("Resizing to ratio");
-					$height = round( ($width * 100 )/ ($image->ratio) );
-				}
-
 				if($autoWidth) {
 					$this->info("Resizing to ratio of width");
 					$width = round( ($width * $image->width * 100 )/ ($image->ratio) );
+				}
+
+				if($autoHeight) {
+					$this->info("Resizing to ratio");
+					$height = round( ($width * 100 )/ ($image->ratio) );
 				}
 
 				$provider = new Yesilcam\ImageProvider\SelectedImageProvider($width, $height, $image);
