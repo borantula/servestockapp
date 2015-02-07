@@ -58,6 +58,7 @@ class ImageSizerCommand extends Command {
 			$this->info('Auto width: {$width}');
 			$autoHeight = true;
 			$autoWidth = true;
+			$autoWidthValue = $width;
 
 		}
 
@@ -82,7 +83,7 @@ class ImageSizerCommand extends Command {
 
 				if($autoWidth) {
 					$this->info("Resizing to ratio of width");
-					$width = round( ($width * $image->width * 100 )/ ($image->ratio) );
+					$width = round( ($autoWidthValue * $image->width * 100 )/ ($image->ratio) );
 				}
 
 				if($autoHeight) {
