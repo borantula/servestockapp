@@ -23,7 +23,23 @@ Route::get('/{width?}/{height?}', function($width = null,$height = null)
         return View::make('test-view');
 
     } else {
+        $factory = new Yesilcam\ImageFactory($width,$height);
 
+        //we have a result now, as an image provider
+        $provider = $factory->getImageProvider();
+
+        //this will be the image we will
+        $sizedImageFactory = new Yesilcam\SizedImageFactory($provider);
+
+        $sizedImage = $sizedImageFactory->find();
+
+
+        if( $sizedImage ) {
+            $imageServer  = new Yesilcam\ImageServer($sizedImage);
+
+//            Event::fire('image.serving',$sizedImage);
+            return $imageServer->serve();
+        }
     }
 
 });
