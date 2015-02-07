@@ -67,7 +67,10 @@ class ImageProcessor extends Image {
 
     public function process()
     {
-        $this->image = $this->image->fit($this->provider->width,$this->provider->height);
+
+        $this->image = $this->image->fit($this->provider->width,$this->provider->height,function ($constraint) {
+            $constraint->upsize();
+        });
 
         return $this;
 
