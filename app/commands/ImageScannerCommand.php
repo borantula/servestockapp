@@ -66,6 +66,14 @@ class ImageScannerCommand extends Command {
 			$this->info("Registered: ".($key+1)." of {$count}: ".$file);
 
 		}
+
+
+		//check for deleted images
+		$images = Yesilcam\ImageRepository::all();
+		foreach($images as $key => $image) {
+			$scanner->imageFileChecker($image);
+		}
+
 	}
 
 	/**

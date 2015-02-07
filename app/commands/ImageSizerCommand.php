@@ -94,6 +94,9 @@ class ImageSizerCommand extends Command {
 
 				$provider = new Yesilcam\ImageProvider\SelectedImageProvider($width, $height, $image);
 
+				//always cut from original to prevent pixellation
+				$provider->fromOriginal = true;
+
 				$sizedImageFactory = new Yesilcam\SizedImageFactory($provider);
 
 				$sizedImage = $sizedImageFactory->find();

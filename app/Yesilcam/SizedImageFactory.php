@@ -38,7 +38,8 @@ class SizedImageFactory {
     {
 
         //search if it already has sized image of current image
-        $sizedImage = $this->image->sizedImages()->ofSize($this->width,$this->height)->first();
+        $sizedImage = $this->image->sizedImages()->ofSize($this->width,$this->height)
+                                ->where('file_exists',1)->first();
 
         //if not, process and record a new image
         if( !$sizedImage ) {

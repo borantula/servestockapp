@@ -108,6 +108,18 @@ class ImageScanner {
 
         return $img;
     }
+
+    /*
+     * Deletes the record if file is not exists
+     */
+    public function imageFileChecker($image) {
+        $exists = File::exists($this->fullPath($image->path));
+
+        if(!$exists) {
+            return $image->delete();
+        }
+        return true;
+    }
 }
 
 

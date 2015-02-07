@@ -29,13 +29,14 @@ class ImageProcessor extends Image {
 
         //check if sized image has smaller but same ratio version
         $sameRatioImage = $sizedImage->sameRatioBiggerSize($sizedImage)->first();
-        if( !is_null($sameRatioImage) ) {
+        if( !is_null($sameRatioImage) && !$this->provider->fromOriginal) {
             $this->originalImage = $sameRatioImage;
 //            $this->quality = 100;
         }
 
 
-        if( !$sameRatioImage ) {
+        if( !$sameRatioImage && !$this->provider->fromOriginal) {
+
 
             // if no same ratio and original image will be used,
             // check for a small version of original image,
@@ -44,6 +45,7 @@ class ImageProcessor extends Image {
                                         ->whereRatio($this->originalImage->ratio)
                                         ->where('width','>',$this->provider->width)
                                         ->where('height','>',$this->provider->height)
+                                        ->where('file_exists',1)
                                         ->orderBy('width','ASC')
                                         ->first();
 

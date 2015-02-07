@@ -42,6 +42,8 @@ abstract class ImageProvider
     public $crop = false;
     public $cropMethod = 'width';
 
+    public $fromOriginal = false;
+
 
     /**
      * @param $width
