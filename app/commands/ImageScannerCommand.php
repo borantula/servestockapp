@@ -65,6 +65,8 @@ class ImageScannerCommand extends Command {
 
 			$this->info("Registered: ".($key+1)." of {$count}: ".$file);
 
+			unset($image);
+
 		}
 
 
